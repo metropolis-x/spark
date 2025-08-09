@@ -443,6 +443,11 @@ This file is divided into 3 sections:
     <customMessage>Use listFiles of SparkFileUtil or Utils instead.</customMessage>
   </check>
 
+  <check customId="commonscodecbase64" level="error" class="org.scalastyle.file.RegexChecker" enabled="true">
+    <parameters><parameter name="regex">\bBase64\.(en|de)codeBase64</parameter></parameters>
+    <customMessage>Use java.util.Base64 instead</customMessage>
+  </check>
+
   <check customId="commonslang3javaversion" level="error" class="org.scalastyle.file.RegexChecker" enabled="true">
     <parameters><parameter name="regex">org\.apache\.commons\.lang3\..*JavaVersion</parameter></parameters>
     <customMessage>Use JEP 223 API (java.lang.Runtime.Version) instead of
@@ -782,7 +787,12 @@ This file is divided into 3 sections:
     <customMessage>Use org.apache.spark.util.collection.Utils instead.</customMessage>
   </check>
 
-  <check customId="maputils" level="error" class="org.scalastyle.file.RegexChecker" enabled="true">
+  <check customId="googleFiles" level="error" class="org.scalastyle.file.RegexChecker" enabled="true">
+    <parameters><parameter name="regex">com\.google\.common\.io\.Files\b</parameter></parameters>
+    <customMessage>Use Java API or Spark's JavaUtils/SparkFileUtils/Utils instead.</customMessage>
+  </check>
+
+  <check customId="googleBaseEncoding" level="error" class="org.scalastyle.file.RegexChecker" enabled="true">
     <parameters><parameter name="regex">com\.google\.common\.io\.BaseEncoding\b</parameter></parameters>
     <customMessage>Use Java APIs (like java.util.Base64) instead.</customMessage>
   </check>
